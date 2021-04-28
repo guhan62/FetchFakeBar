@@ -28,19 +28,21 @@
 *Prereq: Install Python3, Zip Utility*
 * Download the project zip.
 * Unzip the project, which has the project_directory `FetchRewards_27Apr21/`
+* `cd FetchRewards_27Apr21/`
 * Run `python3 -m venv env` - to trigger virtual env instance for Python to keep existing deps on machine safe.
 * Run `pip install -r requirements.txt`
+* Run `source env/bin/activate`
 * Run `python testBars.py`
 
 ### Dependencies
 * Python 3 - [Install](https://www.python.org/downloads/)
-* Pip3 Package Manager
+* Pip3 Package Manager - Packages mentioned in `requirements.txt`
 
 ### Challenges
 * `self.driver.find_element_by_id("reset").click()`
 Had trouble calling this method from member functions
 
-* `Random Behavior` - Took a while to implement and test - **Why?** - guarantees no duplicates, and tests every behavior of the board.
+* `Random Pattern to Test` - Took a while to implement and test - **Why?** - guarantees no duplicates, and tests every behavior of the board.
 
 ### References
-* [Seleniunm Docs](https://selenium-python.readthedocs.io/locating-elements.html)
+* [Selenium Docs](https://selenium-python.readthedocs.io/locating-elements.html)
