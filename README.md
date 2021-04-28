@@ -37,7 +37,7 @@
 * Unzip the project, which has the project_directory `project_dir/`
 * `cd FetchRewards_27Apr21/`
 * Run `python3 -m venv env` - to trigger virtual env instance for Python to keep existing deps on machine safe.
-* **Linux/Mac machine**Run `source env/bin/activate` - Activate the virtual environment, Refer [Python venv Docs](https://docs.python.org/3/library/venv.html) for Windows Platform.
+* **Linux/Mac machine** Run `source env/bin/activate` - Activate the virtual environment, For **Windows Platform** Refer [Python venv Docs](https://docs.python.org/3/library/venv.html)
 * Run `pip install -r requirements.txt` - Install dependencies `Selenium` and other required Packages
 * Run `python testBars.py` - Runs Python Script to test the WebApp, by launching FireFox browser. **Completer Set-Up and previous steps before execution** 
 
