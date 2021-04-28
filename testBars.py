@@ -63,7 +63,7 @@ class FetchFakebars(unittest.TestCase):
         self.visitedBars[rightVal] = True
         #print(self.leftScale, self.rightScale, self.visitedBars)
         leftIdx, rightIdx = rd.choice(self.bars), rd.choice(self.bars)
-        while(self.leftScale[leftIdx]!=-1 and self.rightScale[rightIdx]!=-1):
+        while(self.leftScale[leftIdx]!=-1 or self.rightScale[rightIdx]!=-1):
             leftIdx, rightIdx = rd.choice(self.bars), rd.choice(self.bars)
         self.leftScale[leftIdx] = leftVal
         self.rightScale[rightIdx] = rightVal
