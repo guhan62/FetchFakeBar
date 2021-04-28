@@ -51,17 +51,19 @@ class FetchFakebars(unittest.TestCase):
 
     def generate_grid_scales(self):
         """Generate New grid Scale""" 
+        # In case of Exhaustion of weights, reset and restart
         if(8 - sum(self.visitedBars)==0):
             self.visitedBars = [False]* (self.maxBars)
             self.leftScale = self.reset_scales(self.bars)
             self.rightScale = self.reset_scales(self.bars)
-
+        # Generate Random Values, if = or Visited[left, right] - Loop until we get Random Values
         leftVal, rightVal = rd.choice(self.bars), rd.choice(self.bars)
         while(leftVal==rightVal or self.visitedBars[leftVal] or self.visitedBars[rightVal]):
             leftVal, rightVal = rd.choice(self.bars), rd.choice(self.bars)
         self.visitedBars[leftVal] = True
         self.visitedBars[rightVal] = True
         #print(self.leftScale, self.rightScale, self.visitedBars)
+        # If any index/scale has a weight generate new pairs of indexes
         leftIdx, rightIdx = rd.choice(self.bars), rd.choice(self.bars)
         while(self.leftScale[leftIdx]!=-1 or self.rightScale[rightIdx]!=-1):
             leftIdx, rightIdx = rd.choice(self.bars), rd.choice(self.bars)

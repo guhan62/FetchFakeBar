@@ -1,4 +1,6 @@
 ## FetchRewards SDET Assessment
+#### FetchFakeBars for Rewards
+Problem Description
 **URL:** [Playground URL](http://ec2-54-208-152-154.compute-1.amazonaws.com/)
 
 ### Approach
@@ -9,10 +11,15 @@
 * In case we use up all weights, so that values are not duplicated on either end of scale, we reset our current play and restart
 * Used `Pure Pythonic Selenium` Scripts and tested with `Firefox browser v88.0 (64-bit)` on `Ubuntu 18.04` with an existing `Geckodriver v0.29.0 (cf6956a5ec8e 2021-01-14 10:31 +0200)`
 
+### Dependencies
+* Python 3 - [Install](https://www.python.org/downloads/)
+* Pip3 Package Manager - Packages mentioned in `requirements.txt`, downloaded by default along with Python3+
+* [Browser](https://www.mozilla.org/en-US/firefox/new/), [WebDriver](https://github.com/mozilla/geckodriver/releases) - Mozilla Firefox Browser latest, [GeckoDriver](https://firefox-source-docs.mozilla.org/testing/geckodriver/Usage.html) to control FireFox browser through Selenium
+
 ### Data Structures
-* **bars** - List of all bars weighted from `0 to maxBars`
-* **visitedBars** - Boolean List to keep track of selected weight bars
-* **leftScale, rightScale** - Dictionary mapping from board Index to corresponding weight
+* **bars** - **List** of all bars weighted from `0 to maxBars`
+* **visitedBars** - Boolean **List** to keep track of selected weight bars
+* **leftScale, rightScale** - **Dictionary** mapping from board Index to corresponding weight
 
 ### Module Definitions
 * `def setUp` - Instatiate Class Members and data Structures plus the binary for Selenium WebDriver
@@ -25,24 +32,20 @@
 * `def close_alert_and_get_its_text` - Utility to switch from Browser to textBox and capture the text, return the text for assertion.
 
 ### Set-Up
-*Prereq: Install Python3, Zip Utility*
+*Prereq: Complete Dependencies section and proceed*
 * Download the project zip.
-* Unzip the project, which has the project_directory `FetchRewards_27Apr21/`
+* Unzip the project, which has the project_directory `project_dir/`
 * `cd FetchRewards_27Apr21/`
 * Run `python3 -m venv env` - to trigger virtual env instance for Python to keep existing deps on machine safe.
+* Run `source env/bin/activate` - Activate the virtual environment, Refer [Python venv Docs](https://docs.python.org/3/library/venv.html) for other platforms
 * Run `pip install -r requirements.txt`
-* Run `source env/bin/activate`
 * Run `python testBars.py`
-
-### Dependencies
-* Python 3 - [Install](https://www.python.org/downloads/)
-* Pip3 Package Manager - Packages mentioned in `requirements.txt`
 
 ### Challenges
 * `self.driver.find_element_by_id("reset").click()`
 Had trouble calling this method from member functions
-
 * `Random Pattern to Test` - Took a while to implement and test - **Why?** - guarantees no duplicates, and tests every behavior of the board.
+* *Better Approach* - Shuffle the weights to new scales on board with unweighed scale to find the fake bar in a shorter time
 
 ### References
 * [Selenium Docs](https://selenium-python.readthedocs.io/locating-elements.html)
