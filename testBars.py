@@ -97,7 +97,8 @@ class FetchFakebars(unittest.TestCase):
                 else:
                     self.assertEqual("Yay! You find it!", alertText)
                     self.foundBar = True
-                    print("Fake Bar:",  driver.find_element_by_id(board + "_" + str(i)).get_attribute("value"))
+                    print("Fake Bar (in Board-{0}) => <Cell Index {1},Weight {2}>".format(board,i,driver.find_element_by_id(board + "_" + str(i)).get_attribute("value")))
+                    #print("Fake Bar:",  driver.find_element_by_id(board + "_" + str(i)).get_attribute("value"))
 
     def get_score_listing(self):
         """Parse Game Info"""
