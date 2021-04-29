@@ -1,6 +1,11 @@
 ## FetchRewards SDET Assessment
 #### FetchFakeBars for Rewards
+**STATUS: REJECT, This does not pass. no page object, all in one file.** 
 **URL:** [Playground URL](http://ec2-54-208-152-154.compute-1.amazonaws.com/)
+
+### Take-aways
+* Utilize the given time, to make the code as modular as possible even though given `not production level`.
+* Do not have enough feedback, readers can use this as a reference and comment in `issues` regarding quality.
 
 ### Approach
 * Clean **Regression Test Scenario** with random-behavioral input for every step played by the script.

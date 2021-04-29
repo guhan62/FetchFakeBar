@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pdf
+#*.pdf
 *.log
 # C extensions
 *.so
